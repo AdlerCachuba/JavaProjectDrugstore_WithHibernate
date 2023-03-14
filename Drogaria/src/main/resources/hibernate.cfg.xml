@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+
+		<!-- Configurações de Conexão com o Banco de Dados -->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">drogaria</property>
+		<property name="connection.username"></property>
+		<property name="connection.password"></property>
+
+		<!-- Pool de Conexões -->
+		<property name="connection.pool_size">1</property>
+
+		<!-- SQL dialect -->
+		<property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+
+		<!-- Gerenciamento do Contexto das Sessões -->
+		<property name="current_session_context_class">thread</property>
+
+		<!-- Cache de Segundo Nível -->
+		<property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+
+		<!-- Mostra as SQLs Geradas -->
+		<property name="show_sql">true</property>
+
+		<!-- Cria as tabelas do banco de dados -->
+		<property name="hbm2ddl.auto">validate</property>
+
+		<!-- Aqui onde colocamos todas elas\/ -->
+		<!-- Mapeamento das Entidade -->
+		<mapping class="drogaria.adler.domain.Cidade" />
+		<mapping class="drogaria.adler.domain.Estado" />
+		<mapping class="drogaria.adler.domain.Fabricante" />
+		<mapping class="drogaria.adler.domain.Produto" />
+		<mapping class="drogaria.adler.domain.Pessoa" />
+		<mapping class="drogaria.adler.domain.Cliente" />
+		<mapping class="drogaria.adler.domain.Usuario" />
+		<mapping class="drogaria.adler.domain.Funcionario" />
+		<mapping class="drogaria.adler.domain.Venda" />
+		<!-- <mapping class="drogaria.adler.domain." /> -->
+	</session-factory>
+
+</hibernate-configuration>
